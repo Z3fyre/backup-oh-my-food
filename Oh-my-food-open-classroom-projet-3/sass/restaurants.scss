@@ -1,0 +1,255 @@
+@import "style";
+
+.restaurantContainer {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  background-color: $secondary-color;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media (min-width: 1024px) {
+    max-width: 62rem;
+  }
+}
+
+/* SCSS du header des restaurants*/
+
+.header__arrow {
+  position: absolute;
+  left: 1rem;
+  top: 1.7rem;
+  color: rgba(53, 53, 53, 1);
+  font-size: 24px;
+}
+
+.headerImg {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
+}
+/* Fin SCSS du header des restaurants*/
+
+/* SCSS du menu des restaurants*/
+.menu {
+  margin-top: -4rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: $main-color;
+  z-index: 1;
+  position: relative;
+
+  &__banner {
+    padding: 1rem 2rem 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 23px;
+    gap: 1rem;
+    @media (min-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    font-family: "Shrikhand", "cursive";
+  }
+
+  &__btn {
+    height: 2rem;
+    width: 2rem;
+    border: transparent 0px solid;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    background-color: black;
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &::before {
+      opacity: 0;
+      transition: 0.5s;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: $btn-color;
+    }
+  }
+
+  &__like {
+    transition-duration: 0.25s;
+    background-color: $main-color;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__btn:hover {
+    .menu__like {
+      &--inactive {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.submenus {
+  display: grid;
+}
+
+.submenu {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 1rem;
+
+  &__title {
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0.5rem;
+
+    &::after {
+      content: "";
+      width: 3rem;
+      height: 0.25rem;
+      background-color: $pin-light-color;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.menuItem {
+  background-color: $secondary-color;
+  padding: 1rem;
+  display: flex;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  animation: itemAppear 3s;
+  animation-timing-function: cubic-bezier(0.7, 1.43, 0.68, 0.42);
+  animation-fill-mode: forwards;
+  transform: scale(0);
+  max-width: 100%;
+
+  &__header {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  &__title {
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__description {
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__price {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-left: 0.5rem;
+  }
+
+  /* Animation de l'apparitions des "checks" du menu*/
+
+  &__confirmation {
+    background-color: $pin-light-color;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.5s;
+  }
+
+  &:hover &__confirmation {
+    margin-right: -1rem;
+  }
+
+  &__check {
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    transform: rotate(360deg);
+    transition-duration: 700ms;
+  }
+
+  &:hover &__check {
+    transform: rotate(0);
+  }
+
+  &__icon {
+    color: $pin-light-color;
+  }
+}
+
+/* Animation de l'apparitions des plats du menu*/
+@keyframes itemAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@for $i from 0 to 10 {
+  .delay-#{$i} {
+    animation-delay: #{$i * 0.5}s;
+  }
+}
+
+/* Fin du SCSS du menu des restaurants*/
+
+/* SCSS du bouton"hero" commander des restaurants*/
+
+.hero {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  padding: 3rem 0;
+  &__btn {
+    padding: 1rem 3rem;
+  }
+}
+
+/*Fin du SCSS du bouton "hero" commander des restaurants*/

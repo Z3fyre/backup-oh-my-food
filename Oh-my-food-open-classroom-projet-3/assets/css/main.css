@@ -1,0 +1,109 @@
+/* feuille de style commune*/
+/* Variables */
+/* Main commun */
+body {
+  background: rgb(246, 246, 246);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: 500;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+}
+header .header__logo {
+  font-family: "Shrikhand", serif;
+  font-size: 0px;
+}
+header .header__logo img {
+  max-width: 200px;
+  margin: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.hero__btn {
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  border-radius: 100px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.hero__btn:hover {
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+}
+.hero__btn a {
+  text-decoration: none;
+}
+
+/* footer commun */
+footer {
+  background: rgb(53, 53, 53);
+  width: 100%;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.footer {
+  color: rgb(255, 255, 255);
+}
+@media (min-width: 1024px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 7rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+}
+.footer__list {
+  padding-top: 1rem;
+}
+@media (min-width: 1024px) {
+  .footer__list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+}
+.footer__link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.footer__liens {
+  padding-bottom: 0.3rem;
+}
+
+.footer__icon {
+  padding-right: 0.7rem;
+}
+.footer__icon__2 {
+  padding-right: 0.1rem;
+}
+
+.footer__logo {
+  font-family: "Shrikhand", serif;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+@media (min-width: 1024px) {
+  .footer__logo {
+    padding-top: 0.7rem;
+    margin-right: 2rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

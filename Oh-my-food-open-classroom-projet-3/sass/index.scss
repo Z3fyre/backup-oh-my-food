@@ -1,0 +1,347 @@
+@import "style";
+
+/* Animation du loader*/
+
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(137, 200, 250, 0.3);
+  animation: loader 5s;
+  animation-delay: 5s;
+  animation-fill-mode: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__bar {
+    height: 15rem;
+    width: 5rem;
+
+    border-radius: 1rem;
+    animation-name: growth;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+    &Container {
+      display: flex;
+      width: 20rem;
+      justify-content: space-between;
+      @media (min-width: 768px) {
+        width: 35rem;
+      }
+
+      @media (min-width: 1024px) {
+        width: 50rem;
+      }
+    }
+
+    &__1 {
+      background-color: $pin-light-color;
+    }
+
+    &__2 {
+      background-color: $pin-dark-color;
+      animation-delay: 0.25s;
+    }
+
+    &__3 {
+      background-color: rgba(137, 200, 250, 1);
+      animation-delay: 0.5s;
+    }
+
+    &__4 {
+      background-color: rgba(0, 58, 104, 1);
+      animation-delay: 0.75s;
+    }
+    &__5 {
+      background-color: $fonction-icon-color;
+      animation-delay: 1s;
+    }
+    &__6 {
+      background: $btn-color;
+      animation-delay: 1.25s;
+    }
+  }
+}
+
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -100;
+  }
+}
+
+@keyframes growth {
+  0% {
+    transform: translateY(0);
+    scale: 0;
+  }
+  25% {
+    transform: translateY(0.5rem);
+    scale: 0.75;
+  }
+  50% {
+    transform: translateY(2rem);
+    scale: 1.25;
+  }
+
+  75% {
+    transform: translateY(-0.5rem);
+    scale: 1;
+  }
+  100% {
+    transform: translateY(0);
+    scale: 2;
+  }
+}
+
+/* parametres generaux de la page*/
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 2rem 0rem 1rem 1rem;
+  @media (min-width: 1024px) {
+    padding: 2rem 0rem 1rem 4rem;
+  }
+  @media (min-width: 1700px) {
+    padding: 2rem 0rem 1rem 9rem;
+  }
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* SCSS de la partie "hero" de l'index*/
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+  background-color: rgba(234, 234, 234, 1);
+  font-size: 1.2rem;
+  position: relative;
+  color: rgba(53, 53, 53, 1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  &__icon {
+    margin-right: 1rem;
+  }
+
+  &__text {
+    font-weight: 700;
+  }
+}
+
+.hero {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 0.5rem 1rem 1rem 1rem;
+    text-align: center;
+  }
+  &__text {
+    padding: 0rem 1rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+/* SCSS du fonctionnement du site*/
+
+.fonction {
+  background-color: $secondary-color;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__etapes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+    @media (min-width: 1440px) {
+      gap: 2rem;
+    }
+  }
+  &__etape {
+    list-style: none;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 1.2rem 2rem;
+    background-color: $main-color;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    margin: 1.5rem 1rem 0rem 1rem;
+    width: 18rem;
+    @media (min-width: 1024px) {
+      width: 27%;
+      max-width: 400px;
+      font-weight: 600;
+      text-align: center;
+      padding: 1.5rem 2rem;
+    }
+  }
+}
+
+i.fonction__icon {
+  margin-right: 1rem;
+  color: rgba(126, 126, 126, 1);
+  &.fa-solid.fa-store {
+    color: $fonction-icon-color;
+  }
+}
+
+.number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -47px;
+  height: 24px;
+  width: 24px;
+  color: white;
+  background-color: $fonction-icon-color;
+  padding: 0.2rem;
+  margin-bottom: 3.6rem;
+}
+
+/* SCSS des cartes de presentations des restaurants */
+
+.cards {
+  padding: 1rem;
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6rem;
+  }
+}
+
+.card {
+  background-color: $secondary-color;
+  margin-bottom: 1.5rem;
+  border-radius: 1rem;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  @media (min-width: 1024px) {
+    width: 40%;
+  }
+
+  &__img {
+    height: 12rem;
+    width: 100%;
+    border: transparent solid 0px;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: none;
+    object-fit: cover;
+    @media (min-width: 1024px) {
+      height: 18rem;
+    }
+  }
+
+  &__pin {
+    background-color: $pin-light-color;
+    color: $pin-dark-color;
+    padding: 0.5rem;
+    border-radius: 0.125rem;
+    position: absolute;
+    top: 1rem;
+    right: 0.75rem;
+  }
+
+  &__bottom {
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__title {
+    margin-bottom: 0.3rem;
+  }
+
+  &__btn {
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    border: transparent 0px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    background-color: black;
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &::before {
+      opacity: 0;
+      transition: 0.5s;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: $btn-color;
+    }
+  }
+
+  &__like {
+    transition-duration: 0.25s;
+    background-color: $secondary-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    mix-blend-mode: lighten;
+  }
+
+  &__btn:hover {
+    .menu__like {
+      &--inactive {
+        opacity: 0;
+      }
+    }
+  }
+}

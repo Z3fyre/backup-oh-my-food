@@ -1,0 +1,376 @@
+/* feuille de style commune*/
+/* Variables */
+/* Main commun */
+body {
+  background: rgb(246, 246, 246);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: 500;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+}
+header .header__logo {
+  font-family: "Shrikhand", serif;
+  font-size: 0px;
+}
+header .header__logo img {
+  max-width: 200px;
+  margin: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.hero__btn {
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  border-radius: 100px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.hero__btn:hover {
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+}
+.hero__btn a {
+  text-decoration: none;
+}
+
+/* footer commun */
+footer {
+  background: rgb(53, 53, 53);
+  width: 100%;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.footer {
+  color: rgb(255, 255, 255);
+}
+@media (min-width: 1024px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 7rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+}
+.footer__list {
+  padding-top: 1rem;
+}
+@media (min-width: 1024px) {
+  .footer__list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+}
+.footer__link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.footer__liens {
+  padding-bottom: 0.3rem;
+}
+
+.footer__icon {
+  padding-right: 0.7rem;
+}
+.footer__icon__2 {
+  padding-right: 0.1rem;
+}
+
+.footer__logo {
+  font-family: "Shrikhand", serif;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+@media (min-width: 1024px) {
+  .footer__logo {
+    padding-top: 0.7rem;
+    margin-right: 2rem;
+  }
+}
+
+.restaurantContainer {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  main {
+    max-width: 62rem;
+  }
+}
+
+/* SCSS du header des restaurants*/
+.header__arrow {
+  position: absolute;
+  left: 1rem;
+  top: 1.7rem;
+  color: rgb(53, 53, 53);
+  font-size: 24px;
+}
+
+.headerImg {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Fin SCSS du header des restaurants*/
+/* SCSS du menu des restaurants*/
+.menu {
+  margin-top: -4rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: rgb(246, 246, 246);
+  z-index: 1;
+  position: relative;
+}
+.menu__banner {
+  padding: 1rem 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 23px;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .menu__banner {
+    justify-content: center;
+  }
+}
+.menu__title {
+  font-family: "Shrikhand", "cursive";
+}
+.menu__btn {
+  height: 2rem;
+  width: 2rem;
+  border: transparent 0px solid;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  background-color: black;
+}
+.menu__btn:hover::before {
+  opacity: 1;
+}
+.menu__btn::before {
+  opacity: 0;
+  transition: 0.5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+}
+.menu__like {
+  transition-duration: 0.25s;
+  background-color: rgb(246, 246, 246);
+  mix-blend-mode: lighten;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu__btn:hover .menu__like--inactive {
+  opacity: 0;
+}
+
+.submenus {
+  display: grid;
+}
+
+.submenu {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+.submenu__title {
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.submenu__title::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: rgb(153, 226, 208);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.menuItem {
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  display: flex;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  animation: itemAppear 3s;
+  animation-timing-function: cubic-bezier(0.7, 1.43, 0.68, 0.42);
+  animation-fill-mode: forwards;
+  transform: scale(0);
+  max-width: 100%;
+  /* Animation de l'apparitions des "checks" du menu*/
+}
+.menuItem__header {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+}
+.menuItem__title {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menuItem__description {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menuItem__price {
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-left: 0.5rem;
+}
+.menuItem__confirmation {
+  background-color: rgb(153, 226, 208);
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+.menuItem:hover .menuItem__confirmation {
+  margin-right: -1rem;
+}
+.menuItem__check {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  transform: rotate(360deg);
+  transition-duration: 700ms;
+}
+.menuItem:hover .menuItem__check {
+  transform: rotate(0);
+}
+.menuItem__icon {
+  color: rgb(153, 226, 208);
+}
+
+/* Animation de l'apparitions des plats du menu*/
+@keyframes itemAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.delay-0 {
+  animation-delay: 0s;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+.delay-3 {
+  animation-delay: 1.5s;
+}
+
+.delay-4 {
+  animation-delay: 2s;
+}
+
+.delay-5 {
+  animation-delay: 2.5s;
+}
+
+.delay-6 {
+  animation-delay: 3s;
+}
+
+.delay-7 {
+  animation-delay: 3.5s;
+}
+
+.delay-8 {
+  animation-delay: 4s;
+}
+
+.delay-9 {
+  animation-delay: 4.5s;
+}
+
+/* Fin du SCSS du menu des restaurants*/
+/* SCSS du bouton"hero" commander des restaurants*/
+.hero {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  padding: 3rem 0;
+}
+.hero__btn {
+  padding: 1rem 3rem;
+}
+
+/*Fin du SCSS du bouton "hero" commander des restaurants*/
+
+/*# sourceMappingURL=restaurants.css.map */
